@@ -2,8 +2,9 @@
 
 ### Import bigger set of data
 
-1. In the following location you can find restaurant data set. 
-https://raw.githubusercontent.com/ozlerhakan/mongodb-json-files/master/datasets/restaurant.json
+1. In the `dataset` location or under following url https://raw.githubusercontent.com/ozlerhakan/mongodb-json-files/master/datasets/restaurant.json you can find restaurant data set. 
+
+In the following repository you can find other interesting free sets of data you can play with.
 2. Save document in your computer and import it using Mongo Compass Community:
 - Create new database `restaurants`
 - Create new collection `restaurant`
