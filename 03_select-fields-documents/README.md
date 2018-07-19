@@ -9,5 +9,5 @@ db.users.find({}, {name:1})
 ## Exercises
 
 Play with your animals collection and update:
-1. Return names and ages of al animals.
+1. Return names and ages of all animals.
 2. Now return all `live_number` of all your cats older than 3
