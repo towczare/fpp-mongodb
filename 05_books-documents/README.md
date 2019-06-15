@@ -1,4 +1,4 @@
-# MongoDB - Students
+# MongoDB - Books
 
 ### Import bigger set of data
 
