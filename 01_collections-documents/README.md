@@ -126,7 +126,7 @@ Below are some examples:
     owner: "Mariusz",
     hair_length: "long",
     character: "calm"
-},
+}
 ```
 Take note, there is no schema defined, and some animals differ from others.
 
