@@ -8,10 +8,15 @@ import org.bson.Document;
 
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MongoDemo {
     public static void main(String[] args) throws UnknownHostException {
+
+//        BookService bookService = new BookService(new BookRepositoryMongoDB());
+//        List<Book> all = bookService.findAll();
+
 
         MongoClient mongo = new MongoClient("localhost", 27017);
         MongoDatabase db = mongo.getDatabase("books");
@@ -19,31 +24,35 @@ public class MongoDemo {
 
 //        /**** Insert ****/
 //        // create a document to store key and value
-//        Document elementarz = new Document("title", "Elementarz Pierwszoklasisty")
-//                .append("isbn", "9788302022432");
-//        books.insertOne(elementarz);
+        Document elementarz = new Document("title", "Elementarz Pierwszoklasisty")
+                .append("isbn", "9788302022432").append("authors",
+                        new Document("name", "Janusz Pawlacz")
+                                .append("rating", 1)
+                                .append("books", Arrays.asList("Elementarz Pierwszoklasisty", "Elementarz Drugoklasisty"))
+                );
+        books.insertOne(elementarz);
 
 
-        Document findPublished = new Document("publishedDate", new Document("$ne", null));
-        Document orderBy = new Document("title", 1);
-        MongoCursor<Document> cursor = books.find(findPublished).sort(orderBy).iterator();
-
-        List<Book> booksCollection = new ArrayList<>();
-
-        try {
-            while (cursor.hasNext()) {
-                Document doc = cursor.next();
-
-                Book book = Book.fromDocument(doc);
-                booksCollection.add(book);
-//                System.out.println(
-//                    "Book " + doc.get("title") + ", published at " + doc.get("publishedDate")
-//                );
-            }
-        } finally {
-            cursor.close();
-        }
-
-        System.out.println("Pobrano " + booksCollection.size() + " książek");
+//        Document findPublished = new Document("publishedDate", new Document("$ne", null));
+//        Document orderBy = new Document("title", 1);
+//        MongoCursor<Document> cursor = books.find(findPublished).sort(orderBy).iterator();
+//
+//        List<Book> booksCollection = new ArrayList<>();
+//
+//        try {
+//            while (cursor.hasNext()) {
+//                Document doc = cursor.next();
+//
+//                Book book = Book.fromDocument(doc);
+//                booksCollection.add(book);
+////                System.out.println(
+////                    "Book " + doc.get("title") + ", published at " + doc.get("publishedDate")
+////                );
+//            }
+//        } finally {
+//            cursor.close();
+//        }
+//
+//        System.out.println("Pobrano " + booksCollection.size() + " książek");
     }
 }
