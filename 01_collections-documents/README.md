@@ -1,7 +1,10 @@
 # MongoDB - Collections
 
 ### Collections
-
+0. Switch to database `test` using following syntax:
+```
+use test
+```
 1. Create `users` collection using following syntax:
 ```aidl
 db.createCollection("users")
