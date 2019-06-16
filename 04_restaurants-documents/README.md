@@ -30,3 +30,5 @@ db.restaurants.find({},{name: 1}).sort({name: 1}).limit(10)
 2. Find worse pizza restaurant
 3. How many restaurant is in `outcode` `WS10` area?
 4. Which one is the best? What food type do they serve?
+
+💡 Your turn 🤔, prepare 3 own riddles.
