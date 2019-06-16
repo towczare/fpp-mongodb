@@ -48,6 +48,22 @@ should find:
 ```aidl
 db.books.count()
 ```
+6. To get average number of pages use:
+```
+db.books.aggregate(
+   [
+     {
+       $group:
+         {
+           _id: "$item",
+           avgPages: { $avg: "$pageCount" }
+         }
+     }
+   ]
+)
+```
+
+
 ## Exercises - Duck challenge 
 ```aidl
         ,----,
