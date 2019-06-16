@@ -1,34 +1,33 @@
 package pl.sda.nosql.mongo;
 
-import com.mongodb.*;
+import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MongoDemo {
-    public static void main(String[] args) throws UnknownHostException {
+public class BookRepositoryMongoDB implements BookRepository {
 
-        MongoClient mongo = new MongoClient("localhost", 27017);
-        MongoDatabase db = mongo.getDatabase("books");
+    private MongoClient mongo;
+    private MongoDatabase db;
+
+    public BookRepositoryMongoDB() {
+        this.mongo = new MongoClient("localhost", 27017);
+        this.db = mongo.getDatabase("books");
+    }
+
+    @Override
+    public List<Book> findAll() {
+
+        List<Book> booksCollection = new ArrayList<>();
+
         MongoCollection<Document> books = db.getCollection("books");
-
-//        /**** Insert ****/
-//        // create a document to store key and value
-//        Document elementarz = new Document("title", "Elementarz Pierwszoklasisty")
-//                .append("isbn", "9788302022432");
-//        books.insertOne(elementarz);
-
-
         Document findPublished = new Document("publishedDate", new Document("$ne", null));
         Document orderBy = new Document("title", 1);
         MongoCursor<Document> cursor = books.find(findPublished).sort(orderBy).iterator();
-
-        List<Book> booksCollection = new ArrayList<>();
 
         try {
             while (cursor.hasNext()) {
@@ -44,6 +43,6 @@ public class MongoDemo {
             cursor.close();
         }
 
-        System.out.println("Pobrano " + booksCollection.size() + " książek");
+        return booksCollection;
     }
 }
