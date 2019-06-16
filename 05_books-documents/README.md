@@ -85,3 +85,6 @@ db.books.count()
 8. Assume, we are just going to publish some book. We are going to publish books with title `Distributed Agile in Action` 
 Update status of this book to `PUBLISH` and change publishedDate to current date using `new Date()`
 9. Some books doesn't have any categories, try to find them and add some categories to few of them.
+
+
+💡 Your turn 🤔, prepare 3 own riddles.
