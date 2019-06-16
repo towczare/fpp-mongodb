@@ -8,7 +8,7 @@ In the following repository you can find other interesting free sets of data you
 2. Save document in your computer and import it using Mongo Compass Community:
 - Create new database `restaurants`
 - Switch to database `restaurants`
-- Create new collection `restaurant`
+- Create new collection `restaurants`
 - From upper menu choose Collection -> Import Data
 - Select saved `restaturant.json` file and import it.
 3. Validate results by executing following query:
@@ -24,6 +24,10 @@ you should get something like following:
 4. To sort your documents use following query:
 ```aidl
 db.restaurants.find({},{name: 1}).sort({name: 1}).limit(10)
+```
+5. To show how many restaurants we imported, execute following query:
+```
+db.restaurants.count({})
 ```
 
 ## Exercises
