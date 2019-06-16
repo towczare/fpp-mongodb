@@ -7,6 +7,7 @@
 In the following repository you can find other interesting free sets of data you can play with.
 2. Save document in your computer and import it using Mongo Compass Community:
 - Create new database `restaurants`
+- Switch to database `restaurants`
 - Create new collection `restaurant`
 - From upper menu choose Collection -> Import Data
 - Select saved `restaturant.json` file and import it.
