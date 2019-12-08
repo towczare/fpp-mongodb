@@ -20,6 +20,9 @@ and run `MongoDB Compass Community.exe`
 - Port : `27017`
 - Favorite Name : `LOCAL_MONGO` or any name you like
 
+### Install Robo 3T 
+1. Visit [https://robomongo.org/](https://robomongo.org/) download and install 
+
 ### Validate 
 To validate if all is working fine:
 
