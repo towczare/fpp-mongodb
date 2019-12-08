@@ -2,8 +2,7 @@
 
 ### Import bigger set of data
 
-1. In the `dataset` location or under following url https://raw.githubusercontent.com/ozlerhakan/mongodb-json-files/master/datasets/catalog.books.json you can find book catalogue data set. 
-
+1. In the `dataset` location or under following url https://raw.githubusercontent.com/ozlerhakan/mongodb-json-files/master/datasets/books.json you can find book catalogue data set.
 2. Save document in your computer and import it using Mongo Compass Community:
 - Create new database `books`
 - Create new collection `books`
