@@ -35,5 +35,6 @@ db.restaurants.count({})
 2. Find worse pizza restaurant
 3. How many restaurant is in `outcode` `WS10` area?
 4. Which one is the best? What food type do they serve?
+5. Add 3 your favourite restaurants from local city (use google or tripadvisor to search for required data like rating, postcode, url, address etc.)
 
 💡 Your turn 🤔, prepare 3 own riddles.
